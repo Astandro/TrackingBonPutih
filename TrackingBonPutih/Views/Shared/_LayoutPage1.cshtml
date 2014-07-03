@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+             <link rel="stylesheet" href="~/css/metro-bootstrap.css"/>
+            <link rel="stylesheet" href="~/css/metro-bootstrap-responsive.css" />
+
+            <link rel="stylesheet" href="~/css/iconFont.css" />
+            <link rel="stylesheet" href="~/css/docs.css" />
+            <link rel="stylesheet" href="~/js/prettify/prettify.css" />
+            <!-- Load JavaScript Libraries -->
+            <script src="~/js/jquery/jquery.min.js"></script>
+            <script src="~/js/jquery/jquery.widget.min.js"></script>
+            <script src="~/js/jquery/jquery.mousewheel.js"></script>
+            <script src="~/js/prettify/prettify.js"></script>
+            <!-- Metro UI CSS JavaScript plugins -->
+            <script src="~/js/load-metro.js"></script>
+            <!-- Local JavaScript -->
+            <script src=""></script>
+            <script src="~/js/github.info.js"></script>
+            <script src="~/js/metro.min.js"></script>
+            <script src="~/js/hitua.js"></script>
+        <meta name="viewport" content="width=device-width" />
+    </head>
+    <body class="metro">
+
+            <nav class="navigation-bar">
+    <nav class="navigation-bar-content">
+    <div class="element">
+    Sistem Tracking Bon Putih PT IAMI
+    </div>
+ 
+     
+    <div class="element place-right">
+    <a class="dropdown-toggle" href="#">
+    <span class="icon-cog"></span>
+    </a>
+    <ul class="dropdown-menu place-right" data-role="dropdown">
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Download</a></li>
+    <li><a href="#">Support</a></li>
+    <li><a href="#">Buy Now</a></li>
+    </ul>
+    </div>
+   
+    <span class="element-divider place-right"></span>
+    <button class="element image-button image-left place-right">
+    Sergey Pimenov
+    <img src="~/Images/windows_modern_logo.png"/>
+    </button>
+    </nav>
+    </nav>
+
+        <div class="container" style="margin-left:20px;margin-top:60px">
+    <div style="float:left;width:300px">
+        <nav class="sidebar (light)">
+        <ul>
+            <li class="title">Items Group 1</li>
+            <li class="active"><a href="#"><i class="icon-home"></i>Dashboard</a></li>
+            <li class="stick bg-red"><a href="#"><i class="icon-cog"></i>Layouts</a></li>
+            <li class="stick bg-yellow">
+                <a class="dropdown-toggle" href="#"><i class="icon-tree-view"></i>Sub menu</a>
+            
+                <ul class="dropdown-menu" data-role="dropdown">
+                    <li><a href="">Subitem 1</a></li>
+                    <li><a href="">Subitem 2</a></li>
+                    <li><a href="">Subitem 3</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">Subitem 4</a></li>
+                    <li class="disabled"><a href="">Subitem 4</a></li>
+                </ul>
+            </li>
+            
+            <li class="stick bg-green"><a href="#">Thread item</a></li>
+            <li class="disabled"><a href="#">Disabled item</a></li>
+     
+            <li class="title">Items Group 2</li>
+            <li><a href="#">Other Item 1</a></li>
+            <li><a href="#">Other item 2</a></li>
+            <li><a href="#">Other item 3</a></li>
+
+            <li>
+                <a class="dropdown-toggle" href="#">Sub menu 2</a>
+                <ul class="dropdown-menu" data-role="dropdown">
+                    <li><a href="">Subitem 1</a></li>
+                    <li><a href="">Subitem 2</a></li>
+                    <li><a href="">Subitem 3</a></li>
+                </ul>
+            </li>
+        </ul>
+     </nav>
+    </div>
+            </div>
+        <div id="content" style="float:left"> 
+            @RenderBody()
+        </div>
+</body>
+</html>

@@ -4,21 +4,35 @@
         <meta charset="utf-8" />
         <title>@ViewBag.Title - My ASP.NET MVC Application</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-             <link rel="stylesheet" href="~/css/metro-bootstrap.css">
+             <link rel="stylesheet" href="~/css/metro-bootstrap.css"/>
+            <link rel="stylesheet" href="~/css/metro-bootstrap-responsive.css" />
+
+            <link rel="stylesheet" href="~/css/iconFont.css" />
+            <link rel="stylesheet" href="~/css/docs.css" />
+            <link rel="stylesheet" href="~/js/prettify/prettify.css" />
+            <!-- Load JavaScript Libraries -->
             <script src="~/js/jquery/jquery.min.js"></script>
             <script src="~/js/jquery/jquery.widget.min.js"></script>
-            <script src="~/js/metro/metro.min.js"></script>
+            <script src="~/js/jquery/jquery.mousewheel.js"></script>
+            <script src="~/js/prettify/prettify.js"></script>
+            <!-- Metro UI CSS JavaScript plugins -->
+            <script src="~/js/load-metro.js"></script>
+            <!-- Local JavaScript -->
+            <script src=""></script>
+            <script src="~/js/github.info.js"></script>
+            <script src="~/js/metro.min.js"></script>
+            <script src="~/js/hitua.js"></script>
         <meta name="viewport" content="width=device-width" />
     </head>
     <body class="metro">
-        <header>
+
+       <header>
                <div style="height:70px"></div>            
         </header>
-
-
         <div id="body">
             <section>
                 @RenderBody()
+
             </section>
         </div>
         <br />
