@@ -34,21 +34,19 @@
     </div>
  
      
-    <div class="element place-right">
+    <div class="element place-right" style="margin-right:30px">
     <a class="dropdown-toggle" href="#">
     <span class="icon-cog"></span>
     </a>
     <ul class="dropdown-menu place-right" data-role="dropdown">
-    <li><a href="#">Products</a></li>
-    <li><a href="#">Download</a></li>
-    <li><a href="#">Support</a></li>
-    <li><a href="#">Buy Now</a></li>
+    <li><a href="#">Edit Profil</a></li>
+    <li><a href="#">Log Out</a></li>
     </ul>
     </div>
    
     <span class="element-divider place-right"></span>
     <button class="element image-button image-left place-right">
-    Sergey Pimenov
+    Astandro K.
     <img src="~/Images/windows_modern_logo.png"/>
     </button>
     </nav>
@@ -113,5 +111,16 @@
         <div id="content" style="float:left"> 
             @RenderBody()
         </div>
+
+        <footer style="margin:0 auto;width:100%;text-align:center;bottom:5%;position:absolute">
+            <div>
+                <div>
+                    <p>&copy; @DateTime.Now.Year - PT Isuzu Astra Motor Indonesia</p>
+                </div>
+                 <div>
+                    <p>Using Microsoft &trade; .Net Framework 4.5 and ASP .Net MVC 4</p>
+                </div>
+            </div>
+        </footer>
 </body>
 </html>
