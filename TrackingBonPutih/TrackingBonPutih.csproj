@@ -309,6 +309,7 @@
     <Content Include="fonts\iconFont.svg" />
     <Content Include="fonts\metroSysIcons.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Isuzu_logo.png" />
     <Content Include="Images\Windows-8-Logo.png" />
     <Content Include="Images\windows_8_default_13_wallpaper.jpg" />
     <Content Include="Images\windows_modern_logo.png" />
