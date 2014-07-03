@@ -57,36 +57,39 @@
     <div style="float:left;width:300px">
         <nav class="sidebar (light)">
         <ul>
-            <li class="title">Manajemen User</li>
-            <li class="active"><a href="#"><i class="icon-home"></i>Dashboard</a></li>
-            <li class="stick bg-red"><a href="#"><i class="icon-cog"></i>Layouts</a></li>
+            <li class="title">Main Menu</li>
+            <li class="stick bg-red">
+                <a class="dropdown-toggle" href="#" /><i class="icon-cog"></i>Manajemen User</a>
+                <ul class="dropdown-menu" data-role="dropdown">
+                    <li><a href="">Tambah User</a></li>
+                    <li><a href="">List User</a></li>
+                </ul>
+            </li>
             <li class="stick bg-yellow">
-                <a class="dropdown-toggle" href="#"><i class="icon-tree-view"></i>Sub menu</a>
+                <a class="dropdown-toggle" href="#"><i class="icon-home"></i>Manajemen Departemen</a>
             
                 <ul class="dropdown-menu" data-role="dropdown">
-                    <li><a href="">Subitem 1</a></li>
-                    <li><a href="">Subitem 2</a></li>
-                    <li><a href="">Subitem 3</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Subitem 4</a></li>
-                    <li class="disabled"><a href="">Subitem 4</a></li>
+                    <li><a href="">Tambah Departemen</a></li>
+                    <li><a href="">List Departemen</a></li>
                 </ul>
             </li>
             
-            <li class="stick bg-green"><a href="#">Thread item</a></li>
-            <li class="disabled"><a href="#">Disabled item</a></li>
-     
-            <li class="title">Items Group 2</li>
-            <li><a href="#">Other Item 1</a></li>
-            <li><a href="#">Other item 2</a></li>
-            <li><a href="#">Other item 3</a></li>
-
-            <li>
-                <a class="dropdown-toggle" href="#">Sub menu 2</a>
+             <li class="stick bg-green">
+                <a class="dropdown-toggle" href="#"><i class="icon-tree-view"></i>Manajemen Pos & Rules</a>
+            
                 <ul class="dropdown-menu" data-role="dropdown">
-                    <li><a href="">Subitem 1</a></li>
-                    <li><a href="">Subitem 2</a></li>
-                    <li><a href="">Subitem 3</a></li>
+                    <li><a href="">List Post & Rules</a></li>
+                </ul>
+            </li>
+     
+            <li>
+                <a class="dropdown-toggle" href="#">Manajemen Data</a>
+                <ul class="dropdown-menu" data-role="dropdown">
+                    <li><a href="">Input Bon Putih</a></li>
+                    <li><a href="">Print Barcode</a></li>
+                    <li><a href="">Tracking Data</a></li>
+                    <li><a href="">Print Surat Pengantar</a></li>
+                    <li><a href="">Report</a></li>
                 </ul>
             </li>
         </ul>
