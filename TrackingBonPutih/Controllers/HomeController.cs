@@ -13,9 +13,19 @@ namespace TrackingBonPutih.Controllers
         {
             user checkSession = (user)Session["user"];
             if (checkSession == null)
-                return RedirectToAction("../Login/Index");
+                return RedirectToAction("../Login");
             
             return View();
+        }
+
+        public ActionResult Logout()
+        {
+            user checkSession = (user)Session["user"];
+            if (checkSession == null)
+                return RedirectToAction("../Login");
+
+            Session["user"] = null;
+            return RedirectToAction("../Login");
         }
 
         public ActionResult About()
