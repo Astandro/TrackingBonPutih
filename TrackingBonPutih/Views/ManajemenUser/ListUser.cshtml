@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Daftar User - Sistem Tracking Bon Putih";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2 style="color:blue">@ViewBag.Title</h2>
+<br />
+<legend>Cari User :</legend>
+
+
+<div id="seacrh">
+    <div>
+    <div class="input-control select" style="float:left;width:100px">
+        <select>
+            <option><p>NPK</p></option>
+            <option><p>Nama</p></option>
+            <option><p>Jabatan</p></option>
+        </select>
+    </div>
+    <div style="float:left;width:50px">&nbsp;</div>
+    <div class="input-control text" style="float:left;width:400px">
+        <input type="text" />
+        <button class="btn-search"></button>
+    </div>
+    </div>
+</div>
+<div style="height:80px"></div>
+<div>
+<legend>Daftar User</legend>
+
+<table class="table striped">
+                        <thead>
+                        <tr>
+                            <th class="text-left">NPK</th>
+                            <th class="text-left">Nama</th>
+                            <th class="text-left">Jabatan</th>
+                            <th class="text-left">Departemen</th>
+                            <th class="text-left"></th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>5111100017</td>
+                                <td>Astandro Koesriputranto</td>
+                                <td>Staff</td>
+                                <td>Accounting</td>
+                                <td>
+                                    <button class="button small success">Edit</button>
+                                    <button class="button small danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5111100018</td>
+                                <td>Yoga Pratama Aliarham</td>
+                                <td>Staff</td>
+                                <td>Accounting</td>
+                                <td>
+                                    <button class="button small success">Edit</button>
+                                    <button class="button small danger">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                        <tfoot></tfoot>
+</table>
+</div>
+                    

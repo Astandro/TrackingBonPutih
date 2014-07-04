@@ -15,5 +15,10 @@ namespace TrackingBonPutih.Controllers
         {
             return View();
         }
+
+        public ActionResult ListUser()
+        {
+            return View();
+        }
     }
 }

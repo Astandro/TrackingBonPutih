@@ -311,6 +311,7 @@
     <Content Include="fonts\metroSysIcons.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\Isuzu_logo.png" />
+    <Content Include="Images\User No-Frame.png" />
     <Content Include="Images\Windows-8-Logo.png" />
     <Content Include="Images\windows_8_default_13_wallpaper.jpg" />
     <Content Include="Images\windows_modern_logo.png" />
@@ -476,6 +477,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutPage1.cshtml" />
     <Content Include="Views\ManajemenUser\TambahUser.cshtml" />
+    <Content Include="Views\ManajemenUser\ListUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
