@@ -23,6 +23,11 @@
             <script src="~/js/metro.min.js"></script>
             <script src="~/js/hitua.js"></script>
         <meta name="viewport" content="width=device-width" />
+        <style>
+            h2 {
+                color:blue;
+            }
+        </style>
     </head>
     <body class="metro">
 
@@ -60,7 +65,7 @@
             <li class="stick bg-blue">
                 <a class="dropdown-toggle" href="#" /><i class="icon-cog"></i>Manajemen User</a>
                 <ul class="dropdown-menu" data-role="dropdown">
-                    <li><a href="#">Tambah User</a></li>
+                    <li><a href="../ManajemenUser/TambahUser">Tambah User</a></li>
                     <li><a href="#">List User</a></li>
                 </ul>
             </li>
@@ -108,19 +113,15 @@
      </nav>
     </div>
             </div>
-        <div id="content" style="float:left"> 
-            @RenderBody()
-        </div>
-
-        <footer style="margin:0 auto;width:100%;text-align:center;bottom:5%;position:absolute">
+        <div id="content" style="float:left;height:600px"> 
             <div>
-                <div>
-                    <p>&copy; @DateTime.Now.Year - PT Isuzu Astra Motor Indonesia</p>
-                </div>
-                 <div>
-                    <p>Using Microsoft &trade; .Net Framework 4.5 and ASP .Net MVC 4</p>
+                <div style="width:100%;float:left;margin-left:100px">
+            @RenderBody()
+                    <p style="height:100px"></p>
+                    <p style="text-align:center">&copy; @DateTime.Now.Year - PT Isuzu Astra Motor Indonesia</p>
+                    <p style="text-align:center">Using Microsoft &trade; .Net Framework 4.5 and ASP .Net MVC 4</p>
                 </div>
             </div>
-        </footer>
+        </div>
 </body>
 </html>

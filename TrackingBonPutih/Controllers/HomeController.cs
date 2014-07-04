@@ -11,7 +11,6 @@ namespace TrackingBonPutih.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
             user checkSession = (user)Session["user"];
             if (checkSession == null)
                 return RedirectToAction("../Login/Index");
