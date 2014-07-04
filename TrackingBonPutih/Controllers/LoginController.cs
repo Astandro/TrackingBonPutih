@@ -32,6 +32,8 @@ namespace TrackingBonPutih.Controllers
                 IEnumerable<user> result = from b in context.users
                                            where b.NPK == checkLogin.NPK && b.PASS == checkLogin.PASS
                                            select b;
+                IEnumerable<pos> listPos = from p in context.pos
+                                           select p;
                 
                 if (result.Count() > 0)
                 {
@@ -40,6 +42,7 @@ namespace TrackingBonPutih.Controllers
                         loginState = userLogin;
                     }
                     Session["user"] = loginState;
+                    Session["listPos"] = listPos;
                     return RedirectToAction("../Home/Index");;
                 }
 

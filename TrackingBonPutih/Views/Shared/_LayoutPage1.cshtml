@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{ TrackingBonPutih.Models.user userState = (TrackingBonPutih.Models.user)HttpContext.Current.Session["user"];
+   IEnumerable<TrackingBonPutih.Models.pos> listPos = (IEnumerable<TrackingBonPutih.Models.pos>) HttpContext.Current.Session["listPos"];  
+ }
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -40,13 +43,13 @@
     </a>
     <ul class="dropdown-menu place-right" data-role="dropdown">
     <li><a href="#">Edit Profil</a></li>
-    <li><a href="#">Log Out</a></li>
+    <li><a href="/Home/Logout">Log Out</a></li>
     </ul>
     </div>
    
     <span class="element-divider place-right"></span>
     <button class="element image-button image-left place-right">
-    Astandro K.
+        @userState.nama
     <img src="~/Images/windows_modern_logo.png"/>
     </button>
     </nav>
@@ -58,18 +61,26 @@
         <ul>
             <li class="title">Menu Utama</li>
             <li class="stick bg-blue">
-                <a class="dropdown-toggle" href="#" /><i class="icon-cog"></i>Manajemen User</a>
+                <a class="dropdown-toggle" href="#" ><i class="icon-cog"></i>Manajemen User</a>
                 <ul class="dropdown-menu" data-role="dropdown">
-                    <li><a href="#">Tambah User</a></li>
-                    <li><a href="#">List User</a></li>
+                    @if(userState.LEVEL[0] == 'a'){
+                        <li><a href="/ManajemenUser/TambahUser">Tambah User</a></li>
+                    }
+                    @if(userState.LEVEL[1] == 'a'){
+                        <li><a href="/ManajemenUser/ListUser">List User</a></li>
+                    }
                 </ul>
             </li>
             <li class="stick bg-blue">
                 <a class="dropdown-toggle" href="#"><i class="icon-home"></i>Manajemen Departemen</a>
             
                 <ul class="dropdown-menu" data-role="dropdown">
-                    <li><a href="#">Tambah Departemen</a></li>
+                    @if(userState.LEVEL[2] == 'a'){
+                        <li><a href="#">Tambah Departemen</a></li>
+                    }
+                    @if(userState.LEVEL[3] == 'a'){
                     <li><a href="#">List Departemen</a></li>
+                    }
                 </ul>
             </li>
             
@@ -77,31 +88,88 @@
                 <a class="dropdown-toggle" href="#"><i class="icon-tree-view"></i>Manajemen Pos & Rules</a>
             
                 <ul class="dropdown-menu" data-role="dropdown">
-                    <li><a href="#">List Post & Rules</a></li>
+                    @if(userState.LEVEL[4] == 'a'){
+                        <li><a href="#">List Post & Rules</a></li>
+                    }
                 </ul>
             </li>
      
             <li class="stick bg-blue">
                 <a class="dropdown-toggle" href="#">Manajemen Data</a>
                 <ul class="dropdown-menu" data-role="dropdown">
-                    <li><a href="#">Input Bon Putih</a></li>
+                    @if(userState.LEVEL[5] == 'a'){
+                        <li><a href="#">Input Bon Putih</a></li>
+                    }
+                        @if(userState.LEVEL[6] == 'a'){
                     <li><a href="#">Print Barcode</a></li>
+                    }
+                        @if(userState.LEVEL[7] == 'a'){
                     <li><a href="#">Tracking Data</a></li>
+                    }
+                        @if(userState.LEVEL[8] == 'a'){
                     <li><a href="#">Print Surat Pengantar</a></li>
+                    }
+                        @if(userState.LEVEL[9] == 'a'){
                     <li><a href="#">Report</a></li>
+                    }
                 </ul>
             </li>
 
             <li class="stick bg-blue">
                 <a class="dropdown-toggle" href="#">POS</a>
                 <ul class="dropdown-menu" data-role="dropdown">
-                    <li><a href="#">General Affairs</a></li>
-                    <li><a href="#">HRD</a></li>
-                    <li><a href="#">Budget</a></li>
-                    <li><a href="#">Accounting</a></li>
-                    <li><a href="#">Treasury</a></li>
-                    <li><a href="#">Closing</a></li>
-                    <li><a href="#">Archiving</a></li>
+                    @foreach (var item in listPos)
+                    {  
+                        if(item.ID_POS == 0 && item.S_POS == 1 && userState.LEVEL[10] == 'a'){
+                            <li><a href="#">@item.NAMA_POS</a></li>
+                        }
+                        
+                        if(item.ID_POS == 1 && item.S_POS == 1 && userState.LEVEL[11] == 'a'){
+                            <li><a href="#">@item.NAMA_POS</a></li>
+                        }
+                        
+                        if(item.ID_POS == 2 && item.S_POS == 1 && userState.LEVEL[12] == 'a'){
+                            <li><a href="#">@item.NAMA_POS</a></li>
+                        }
+                        
+                        if(item.ID_POS == 3 && item.S_POS == 1 && userState.LEVEL[13] == 'a'){
+                            <li><a href="#">@item.NAMA_POS</a></li>
+                        }
+                        
+                        if(item.ID_POS == 4 && item.S_POS == 1 && userState.LEVEL[14] == 'a'){
+                            <li><a href="#">@item.NAMA_POS</a></li>
+                        }
+                        
+                        if(item.ID_POS == 5 && item.S_POS == 1 && userState.LEVEL[15] == 'a'){
+                            <li><a href="#">@item.NAMA_POS</a></li>
+                        }
+                        
+                        if(item.ID_POS == 6 && item.S_POS == 1 && userState.LEVEL[16] == 'a'){
+                            <li><a href="#">@item.NAMA_POS</a></li>
+                        }
+                        
+                        if(item.ID_POS == 7 && item.S_POS == 1 && userState.LEVEL[17] == 'a'){
+                            <li><a href="#">@item.NAMA_POS</a></li>
+                        }
+                        
+                        if(item.ID_POS == 8 && item.S_POS == 1 && userState.LEVEL[18] == 'a'){
+                            <li><a href="#">@item.NAMA_POS</a></li>
+                        }
+                        
+                        if(item.ID_POS == 9 && item.S_POS == 1 && userState.LEVEL[19] == 'a'){
+                            <li><a href="#">@item.NAMA_POS</a></li>
+                        }
+                       
+                    }
+
+                     @if(userState.LEVEL[20] == 'a'){
+                            <li><a href="#">POS REJECT</a></li>
+                     }
+                        
+                     @if(userState.LEVEL[21] == 'a'){
+                            <li><a href="#">ARCHIVING</a></li>
+                     }
+                 
                 </ul>
             </li>
         </ul>
