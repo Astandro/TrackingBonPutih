@@ -68,8 +68,12 @@
             <li class="stick bg-blue">
                 <a class="dropdown-toggle" href="#" ><i class="icon-cog"></i>Manajemen User</a>
                 <ul class="dropdown-menu" data-role="dropdown">
-                    <li><a href="#">Tambah User</a></li>
-                    <li><a href="#">List User</a></li>
+                    @if(userState.LEVEL[0] == 'a'){
+                    <li><a href="ManajemenUser/TambahUser">Tambah User</a></li>
+                    }
+                    @if(userState.LEVEL[1] == 'a'){
+                    <li><a href="ManajemenUser/ListUser">List User</a></li>
+                    }
                 </ul>
             </li>
             <li class="stick bg-blue">
@@ -77,10 +81,10 @@
             
                 <ul class="dropdown-menu" data-role="dropdown">
                     @if(userState.LEVEL[2] == 'a'){
-                    <li><a href="#">Tambah Departemen</a></li>
+                    <li><a href="ManajemenDepartemen/TambahDepartemen">Tambah Departemen</a></li>
                     }
                     @if(userState.LEVEL[3] == 'a'){
-                    <li><a href="#">List Departemen</a></li>
+                    <li><a href="ManajemenDepartemen/ListDepartemen">List Departemen</a></li>
                     }
                 </ul>
             </li>
@@ -90,7 +94,7 @@
             
                 <ul class="dropdown-menu" data-role="dropdown">
                     @if(userState.LEVEL[4] == 'a'){
-                    <li><a href="#">List Post & Rules</a></li>
+                    <li><a href="ManajemenPos/ListPos">List Post & Rules</a></li>
                     }
                 </ul>
             </li>
