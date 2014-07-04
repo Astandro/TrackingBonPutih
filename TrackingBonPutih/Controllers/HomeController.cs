@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TrackingBonPutih.Models;
 
 namespace TrackingBonPutih.Controllers
 {
@@ -11,7 +12,10 @@ namespace TrackingBonPutih.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-
+            user checkSession = (user)Session["user"];
+            if (checkSession == null)
+                return RedirectToAction("../Login/Index");
+            
             return View();
         }
 
