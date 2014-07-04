@@ -16,21 +16,33 @@ namespace TrackingBonPutih.Controllers
 
         public ActionResult Index()
         {
+            if (Session["user"] != null)
+                return RedirectToAction("../Home");
+
             return View();
         }
 
         [HttpPost]
         public ActionResult Index(user checkLogin)
         {
+            user loginState = null;
             trackingEntities context = new trackingEntities();
             if (ModelState.IsValid)
             {
                 IEnumerable<user> result = from b in context.users
                                            where b.NPK == checkLogin.NPK && b.PASS == checkLogin.PASS
                                            select b;
-            
-                if(result.Count() > 0)
-                    return View("../Home/Index");
+                
+                if (result.Count() > 0)
+                {
+                    foreach (var userLogin in result)
+                    {
+                        loginState = userLogin;
+                    }
+                    Session["user"] = loginState;
+                    return RedirectToAction("../Home/Index");;
+                }
+
                 else
                     ModelState.AddModelError("", "username / password salah");
             

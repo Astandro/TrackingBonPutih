@@ -26,5 +26,7 @@ namespace TrackingBonPutih.Models
         public int ID_DEP { get; set; }
         public int FLAG_USER { get; set; }
         public string STATUS { get; set; }
+
+
     }
 }
