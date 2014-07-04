@@ -17,16 +17,20 @@ namespace TrackingBonPutih.Models
     {
         [Required(ErrorMessage="Masukan NPK Anda!")]
         public int NPK { get; set; }
+
         public string nama { get; set; }
+
         public string bagian { get; set; }
+
         public string photo { get; set; }
+
         [Required(ErrorMessage = "Masukan Password Anda!")]
         public string PASS { get; set; }
+        
         public string LEVEL { get; set; }
         public int ID_DEP { get; set; }
         public int FLAG_USER { get; set; }
         public string STATUS { get; set; }
-
 
     }
 }

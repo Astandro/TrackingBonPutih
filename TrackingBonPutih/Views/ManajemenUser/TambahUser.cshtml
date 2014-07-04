@@ -1,183 +1,195 @@
-﻿@{
+﻿@model TrackingBonPutih.Models.user
+@{
+    
     ViewBag.Title = "Tambah User";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    IEnumerable<TrackingBonPutih.Models.departeman> listDept = (IEnumerable<TrackingBonPutih.Models.departeman>)ViewData["listDept"];
 }
 
 <h2 style="color:blue">@ViewBag.Title</h2>
 <br />
 <legend>Tambah User Baru :</legend>
 
-<label><p>NPK</p></label>
-<div class="input-control text" data-role="input-control">
-    <input type="text" />
-</div>
-<label><p>Password</p></label>
-<div class="input-control text" data-role="input-control">
-    <input type="text" />
-</div>
-<label><p>Password Again</p></label>
-<div class="input-control text" data-role="input-control">
-    <input type="password" />
-</div>
-<label><p>Nama</p></label>
-<div class="input-control text" data-role="input-control">
-    <input type="password" />
-</div>
-<label><p>Jabatan</p></label>
-<div class="input-control text" data-role="input-control">
-    <input type="password" />
-</div>
-<label><p>Departemen</p></label>
-<div class="input-control select" data-role="input-control">
-    <select>
-        <option>Value 1</option>
-        <option>Value 2</option>
-        <option>Value 3</option>
-    </select>
-</div>
-<div style="height:40px"></div>
-<legend>User Priviledge</legend>
-<label><p style="color:blue">Manajemen User</p></label>
-<div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
-    <label>
-        <input type="checkbox" ></input>
-        <span class="check"></span>
-        &nbsp;Tambah User
-    </label>
-</div>
-<div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
-    <label>
-        <input type="checkbox" ></input>
-        <span class="check"></span>
-        &nbsp;Ubah Data User
-    </label>
-</div>
-<legend></legend>
-<label><p style="color:blue">Manajemen Departemen</p></label>
-<div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
-    <label>
-        <input type="checkbox" ></input>
-        <span class="check"></span>
-        &nbsp;Tambah Departemen
-    </label>
-</div>
-<div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
-    <label>
-        <input type="checkbox" ></input>
-        <span class="check"></span>
-        &nbsp;Ubah Data Departemen
-    </label>
-</div>
-<legend></legend>
-<label><p style="color:blue">Manajemen Pos & Rules</p></label>
-<div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
-    <label>
-        <input type="checkbox" ></input>
-        <span class="check"></span>
-        &nbsp;List Post & Rules
-    </label>
-</div>
-<legend></legend>
-<label><p style="color:blue">Manajemen Data</p></label>
-<div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
-    <label>
-        <input type="checkbox" ></input>
-        <span class="check"></span>
-        &nbsp;Input Bon Putih
-    </label>
-</div>
-<div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
-    <label>
-        <input type="checkbox" ></input>
-        <span class="check"></span>
-        &nbsp;Print Barcode
-    </label>
-</div>
-<br />
-<div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
-    <label>
-        <input type="checkbox" ></input>
-        <span class="check"></span>
-        &nbsp;Tracking Data
-    </label>
-</div>
-<div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
-    <label>
-        <input type="checkbox" ></input>
-        <span class="check"></span>
-        &nbsp;Print Surat Pengantar
-    </label>
-</div>
-<br />
-<div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
-    <label>
-        <input type="checkbox" ></input>
-        <span class="check"></span>
-        &nbsp;Report
-    </label>
-</div>
-<div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
-    <label>
-        <input type="checkbox" ></input>
-        <span class="check"></span>
-        &nbsp;Show Report All Dept
-    </label>
-</div>
-<legend></legend>
-<label><p style="color:blue">POS</p></label>
-<div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
-    <label>
-        <input type="checkbox" ></input>
-        <span class="check"></span>
-        &nbsp;General Affairs
-    </label>
-</div>
-<div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
-    <label>
-        <input type="checkbox" ></input>
-        <span class="check"></span>
-        &nbsp;HRD
-    </label>
-</div>
-<br />
-<div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
-    <label>
-        <input type="checkbox" ></input>
-        <span class="check"></span>
-        &nbsp;Budget
-    </label>
-</div>
-<div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
-    <label>
-        <input type="checkbox" ></input>
-        <span class="check"></span>
-        &nbsp;Accounting
-    </label>
-</div>
-<br />
-<div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
-    <label>
-        <input type="checkbox" ></input>
-        <span class="check"></span>
-        &nbsp;Treasury
-    </label>
-</div>
-<div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
-    <label>
-        <input type="checkbox" ></input>
-        <span class="check"></span>
-        &nbsp;Closing
-    </label>
-</div>
-<br />
-<div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
-    <label>
-        <input type="checkbox" ></input>
-        <span class="check"></span>
-        &nbsp;Archiving
-    </label>
-</div>
-<legend></legend>
+@using (Html.BeginForm())
+{
+     @Html.ValidationSummary(true)
+    <label><p>NPK</p></label>
+    <div class="input-control text" data-role="input-control">
+        @Html.TextBoxFor(u => u.NPK)
+        <p class="text-alert">@Html.ValidationMessageFor(u => u.NPK)</p>
+    </div>
+    <label><p>Password</p></label>
+    <div class="input-control text" data-role="input-control">
+         @Html.PasswordFor(u => u.PASS)
+         <p class="text-alert">@Html.ValidationMessageFor(u => u.PASS)</p>
+    </div>
+    <label><p>Password Again</p></label>
+    <div class="input-control text" data-role="input-control">
+        <input type="password" />
+    </div>
+    <label><p>Nama</p></label>
+    <div class="input-control text" data-role="input-control">
+         @Html.TextBoxFor(u => u.nama)
+        <p class="text-alert">@Html.ValidationMessageFor(u => u.nama)</p>
+    </div>
+    <label><p>Jabatan</p></label>
+    <div class="input-control text" data-role="input-control">
+         @Html.TextBoxFor(u => u.bagian)
+        <p class="text-alert">@Html.ValidationMessageFor(u => u.bagian)</p>
+    </div>
+    <label><p>Departemen</p></label>
+    <div class="input-control select" data-role="input-control">
+        <select>
+            @foreach(var item in listDept)
+            { 
+                <option>@item.NAMA_DEP</option>
+            }
+        </select>
+    </div>
+    <div style="height:40px"></div>
+    <legend>User Priviledge</legend>
+    <label><p style="color:blue">Manajemen User</p></label>
+    <div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
+        <label>
+            <input type="checkbox" ></input>
+            <span class="check"></span>
+            &nbsp;Tambah User
+        </label>
+    </div>
+    <div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
+        <label>
+            <input type="checkbox" ></input>
+            <span class="check"></span>
+            &nbsp;Ubah Data User
+        </label>
+    </div>
+    <legend></legend>
+    <label><p style="color:blue">Manajemen Departemen</p></label>
+    <div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
+        <label>
+            <input type="checkbox" />
+            <span class="check"></span>
+            &nbsp;Tambah Departemen
+        </label>
+    </div>
+    <div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
+        <label>
+            <input type="checkbox" />
+            <span class="check"></span>
+            &nbsp;Ubah Data Departemen
+        </label>
+    </div>
+    <legend></legend>
+    <label><p style="color:blue">Manajemen Pos & Rules</p></label>
+    <div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
+        <label>
+            <input type="checkbox" />
+            <span class="check"></span>
+            &nbsp;List Post & Rules
+        </label>
+    </div>
+    <legend></legend>
+    <label><p style="color:blue">Manajemen Data</p></label>
+    <div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
+        <label>
+            <input type="checkbox" />
+            <span class="check"></span>
+            &nbsp;Input Bon Putih
+        </label>
+    </div>
+    <div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
+        <label>
+            <input type="checkbox" />
+            <span class="check"></span>
+            &nbsp;Print Barcode
+        </label>
+    </div>
+    <br />
+    <div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
+        <label>
+            <input type="checkbox" />
+            <span class="check"></span>
+            &nbsp;Tracking Data
+        </label>
+    </div>
+    <div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
+        <label>
+            <input type="checkbox" />
+            <span class="check"></span>
+            &nbsp;Print Surat Pengantar
+        </label>
+    </div>
+    <br />
+    <div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
+        <label>
+            <input type="checkbox" />
+            <span class="check"></span>
+            &nbsp;Report
+        </label>
+    </div>
+    <div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
+        <label>
+            <input type="checkbox" />
+            <span class="check"></span>
+            &nbsp;Show Report All Dept
+        </label>
+    </div>
+    <legend></legend>
+    <label><p style="color:blue">POS</p></label>
+    <div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
+        <label>
+            <input type="checkbox" />
+            <span class="check"></span>
+            &nbsp;General Affairs
+        </label>
+    </div>
+    <div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
+        <label>
+            <input type="checkbox" />
+            <span class="check"></span>
+            &nbsp;HRD
+        </label>
+    </div>
+    <br />
+    <div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
+        <label>
+            <input type="checkbox" />
+            <span class="check"></span>
+            &nbsp;Budget
+        </label>
+    </div>
+    <div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
+        <label>
+            <input type="checkbox" />
+            <span class="check"></span>
+            &nbsp;Accounting
+        </label>
+    </div>
+    <br />
+    <div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
+        <label>
+            <input type="checkbox" />
+            <span class="check"></span>
+            &nbsp;Treasury
+        </label>
+    </div>
+    <div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
+        <label>
+            <input type="checkbox" />
+            <span class="check"></span>
+            &nbsp;Closing
+        </label>
+    </div>
+    <br />
+    <div class="input-control switch margin10" data-role="input-control" style="width:220px;text-align:left">
+        <label>
+            <input type="checkbox" />
+            <span class="check"></span>
+            &nbsp;Archiving
+        </label>
+    </div>
+    <legend></legend>
 
 <input type="submit" value="Submit" class="button large primary"/>
 <input type="submit" value="Reset" class="button large primary"/>
+}
