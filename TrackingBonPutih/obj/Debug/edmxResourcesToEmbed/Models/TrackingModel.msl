@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="trackingModelStoreContainer" CdmEntityContainer="trackingEntities">
+    <EntitySetMapping Name="currencies">
+      <EntityTypeMapping TypeName="trackingModel.currency">
+        <MappingFragment StoreEntitySet="currency">
+          <ScalarProperty Name="ID_CUR" ColumnName="ID_CUR" />
+          <ScalarProperty Name="N_CUR" ColumnName="N_CUR" />
+          <ScalarProperty Name="K_CUR" ColumnName="K_CUR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="data">
+      <EntityTypeMapping TypeName="trackingModel.datum">
+        <MappingFragment StoreEntitySet="data">
+          <ScalarProperty Name="ID_BAR" ColumnName="ID_BAR" />
+          <ScalarProperty Name="BP" ColumnName="BP" />
+          <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+          <ScalarProperty Name="SEN" ColumnName="SEN" />
+          <ScalarProperty Name="ID_CUR" ColumnName="ID_CUR" />
+          <ScalarProperty Name="AMOUNT_SHOW" ColumnName="AMOUNT_SHOW" />
+          <ScalarProperty Name="TERBILANG" ColumnName="TERBILANG" />
+          <ScalarProperty Name="SP" ColumnName="SP" />
+          <ScalarProperty Name="ID_DEP" ColumnName="ID_DEP" />
+          <ScalarProperty Name="ID_RULES" ColumnName="ID_RULES" />
+          <ScalarProperty Name="TGL_INPUT" ColumnName="TGL_INPUT" />
+          <ScalarProperty Name="TGL_STRUK" ColumnName="TGL_STRUK" />
+          <ScalarProperty Name="TGL_ARCHIVED" ColumnName="TGL_ARCHIVED" />
+          <ScalarProperty Name="TGL_REJECTED" ColumnName="TGL_REJECTED" />
+          <ScalarProperty Name="KEPADA" ColumnName="KEPADA" />
+          <ScalarProperty Name="POS1" ColumnName="POS1" />
+          <ScalarProperty Name="POS2" ColumnName="POS2" />
+          <ScalarProperty Name="POS3" ColumnName="POS3" />
+          <ScalarProperty Name="POS4" ColumnName="POS4" />
+          <ScalarProperty Name="POS5" ColumnName="POS5" />
+          <ScalarProperty Name="POS6" ColumnName="POS6" />
+          <ScalarProperty Name="POS7" ColumnName="POS7" />
+          <ScalarProperty Name="POS8" ColumnName="POS8" />
+          <ScalarProperty Name="POS9" ColumnName="POS9" />
+          <ScalarProperty Name="POS10" ColumnName="POS10" />
+          <ScalarProperty Name="POS_ARCHIVE" ColumnName="POS_ARCHIVE" />
+          <ScalarProperty Name="POS_REJECT" ColumnName="POS_REJECT" />
+          <ScalarProperty Name="NOW_POS" ColumnName="NOW_POS" />
+          <ScalarProperty Name="NEXT_POS" ColumnName="NEXT_POS" />
+          <ScalarProperty Name="LAST_POS" ColumnName="LAST_POS" />
+          <ScalarProperty Name="FROM_POS" ColumnName="FROM_POS" />
+          <ScalarProperty Name="KET" ColumnName="KET" />
+          <ScalarProperty Name="KET_BP" ColumnName="KET_BP" />
+          <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+          <ScalarProperty Name="USER" ColumnName="USER" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="BEBAN" ColumnName="BEBAN" />
+          <ScalarProperty Name="TGL_JT" ColumnName="TGL_JT" />
+          <ScalarProperty Name="TGL_SKRNG" ColumnName="TGL_SKRNG" />
+          <ScalarProperty Name="PIMPINAN" ColumnName="PIMPINAN" />
+          <ScalarProperty Name="PEMOHON" ColumnName="PEMOHON" />
+          <ScalarProperty Name="PRINT_TT" ColumnName="PRINT_TT" />
+          <ScalarProperty Name="STRUK_READY" ColumnName="STRUK_READY" />
+          <ScalarProperty Name="STATUS_VER" ColumnName="STATUS_VER" />
+          <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+          <ScalarProperty Name="MODIFIED_ON" ColumnName="MODIFIED_ON" />
+          <ScalarProperty Name="FILENAME" ColumnName="FILENAME" />
+          <ScalarProperty Name="UPDATE_COUNT" ColumnName="UPDATE_COUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="departemen">
+      <EntityTypeMapping TypeName="trackingModel.departeman">
+        <MappingFragment StoreEntitySet="departemen">
+          <ScalarProperty Name="ID_DEP" ColumnName="ID_DEP" />
+          <ScalarProperty Name="NAMA_DEP" ColumnName="NAMA_DEP" />
+          <ScalarProperty Name="FLAG_DEP" ColumnName="FLAG_DEP" />
+          <ScalarProperty Name="SAP_DEP" ColumnName="SAP_DEP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detils">
+      <EntityTypeMapping TypeName="trackingModel.detil">
+        <MappingFragment StoreEntitySet="detil">
+          <ScalarProperty Name="ID_DETIL" ColumnName="ID_DETIL" />
+          <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+          <ScalarProperty Name="PERKIRAAN" ColumnName="PERKIRAAN" />
+          <ScalarProperty Name="KETERANGAN" ColumnName="KETERANGAN" />
+          <ScalarProperty Name="JUMLAH" ColumnName="JUMLAH" />
+          <ScalarProperty Name="JUMLAH_SEN" ColumnName="JUMLAH_SEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pos">
+      <EntityTypeMapping TypeName="trackingModel.pos">
+        <MappingFragment StoreEntitySet="pos">
+          <ScalarProperty Name="ID_POS" ColumnName="ID_POS" />
+          <ScalarProperty Name="NAMA_POS" ColumnName="NAMA_POS" />
+          <ScalarProperty Name="S_POS" ColumnName="S_POS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rules">
+      <EntityTypeMapping TypeName="trackingModel.rule">
+        <MappingFragment StoreEntitySet="rules">
+          <ScalarProperty Name="ID_RULES" ColumnName="ID_RULES" />
+          <ScalarProperty Name="NAMA_RULES" ColumnName="NAMA_RULES" />
+          <ScalarProperty Name="RULES_POS" ColumnName="RULES_POS" />
+          <ScalarProperty Name="S_RULES" ColumnName="S_RULES" />
+          <ScalarProperty Name="SAP_RULES" ColumnName="SAP_RULES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sps">
+      <EntityTypeMapping TypeName="trackingModel.sp">
+        <MappingFragment StoreEntitySet="sp">
+          <ScalarProperty Name="SP1" ColumnName="SP" />
+          <ScalarProperty Name="USER_SP" ColumnName="USER_SP" />
+          <ScalarProperty Name="SP_PRINT" ColumnName="SP_PRINT" />
+          <ScalarProperty Name="SP_NOW" ColumnName="SP_NOW" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="status">
+      <EntityTypeMapping TypeName="trackingModel.status">
+        <MappingFragment StoreEntitySet="status">
+          <ScalarProperty Name="ID_STATUS" ColumnName="ID_STATUS" />
+          <ScalarProperty Name="DESC_STATUS" ColumnName="DESC_STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_terima">
+      <EntityTypeMapping TypeName="trackingModel.t_terima">
+        <MappingFragment StoreEntitySet="t_terima">
+          <ScalarProperty Name="NO_TT" ColumnName="NO_TT" />
+          <ScalarProperty Name="USER_TT" ColumnName="USER_TT" />
+          <ScalarProperty Name="ID_POS" ColumnName="ID_POS" />
+          <ScalarProperty Name="TT_PRINT" ColumnName="TT_PRINT" />
+          <ScalarProperty Name="ARCHIVED" ColumnName="ARCHIVED" />
+          <ScalarProperty Name="REJECTED" ColumnName="REJECTED" />
+          <ScalarProperty Name="TT_NOW" ColumnName="TT_NOW" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="trackingModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="NPK" ColumnName="NPK" />
+          <ScalarProperty Name="nama" ColumnName="nama" />
+          <ScalarProperty Name="bagian" ColumnName="bagian" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="PASS" ColumnName="PASS" />
+          <ScalarProperty Name="LEVEL" ColumnName="LEVEL" />
+          <ScalarProperty Name="ID_DEP" ColumnName="ID_DEP" />
+          <ScalarProperty Name="FLAG_USER" ColumnName="FLAG_USER" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="trackingModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="trackingModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="trackingModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="trackingModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="trackingModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="trackingModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="trackingModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="trackingModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="trackingModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

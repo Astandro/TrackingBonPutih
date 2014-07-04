@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="trackingModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="trackingEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="currencies" EntityType="trackingModel.currency" />
+    <EntitySet Name="data" EntityType="trackingModel.datum" />
+    <EntitySet Name="departemen" EntityType="trackingModel.departeman" />
+    <EntitySet Name="detils" EntityType="trackingModel.detil" />
+    <EntitySet Name="pos" EntityType="trackingModel.pos" />
+    <EntitySet Name="rules" EntityType="trackingModel.rule" />
+    <EntitySet Name="sps" EntityType="trackingModel.sp" />
+    <EntitySet Name="status" EntityType="trackingModel.status" />
+    <EntitySet Name="t_terima" EntityType="trackingModel.t_terima" />
+    <EntitySet Name="users" EntityType="trackingModel.user" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(trackingModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(trackingModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <EntityType Name="currency">
+    <Key>
+      <PropertyRef Name="ID_CUR" />
+    </Key>
+    <Property Name="ID_CUR" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="N_CUR" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="K_CUR" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="datum">
+    <Key>
+      <PropertyRef Name="ID_BAR" />
+    </Key>
+    <Property Name="ID_BAR" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="BP" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="AMOUNT" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="SEN" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+    <Property Name="ID_CUR" Type="Int32" Nullable="false" />
+    <Property Name="AMOUNT_SHOW" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="TERBILANG" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="SP" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="ID_DEP" Type="Int32" Nullable="false" />
+    <Property Name="ID_RULES" Type="Int32" Nullable="false" />
+    <Property Name="TGL_INPUT" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="TGL_STRUK" Type="DateTime" Precision="7" />
+    <Property Name="TGL_ARCHIVED" Type="DateTime" Precision="7" />
+    <Property Name="TGL_REJECTED" Type="DateTime" Precision="7" />
+    <Property Name="KEPADA" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="POS1" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="POS2" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="POS3" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="POS4" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="POS5" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="POS6" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="POS7" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="POS8" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="POS9" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="POS10" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="POS_ARCHIVE" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="POS_REJECT" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="NOW_POS" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="NEXT_POS" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="LAST_POS" Type="Int32" Nullable="false" />
+    <Property Name="FROM_POS" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="KET" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="KET_BP" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="BARCODE" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="USER" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="STATUS" Type="Int32" Nullable="false" />
+    <Property Name="BEBAN" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="TGL_JT" Type="DateTime" Precision="7" />
+    <Property Name="TGL_SKRNG" Type="DateTime" Precision="7" />
+    <Property Name="PIMPINAN" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="PEMOHON" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="PRINT_TT" Type="Int32" />
+    <Property Name="STRUK_READY" Type="Int32" />
+    <Property Name="STATUS_VER" Type="Int32" />
+    <Property Name="MODIFIED_BY" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="MODIFIED_ON" Type="DateTime" Precision="7" />
+    <Property Name="FILENAME" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="UPDATE_COUNT" Type="Int32" />
+  </EntityType>
+  <EntityType Name="departeman">
+    <Key>
+      <PropertyRef Name="ID_DEP" />
+    </Key>
+    <Property Name="ID_DEP" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NAMA_DEP" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="FLAG_DEP" Type="Int32" Nullable="false" />
+    <Property Name="SAP_DEP" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="detil">
+    <Key>
+      <PropertyRef Name="ID_DETIL" />
+    </Key>
+    <Property Name="ID_DETIL" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="BARCODE" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="PERKIRAAN" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="KETERANGAN" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="JUMLAH" Type="Int64" Nullable="false" />
+    <Property Name="JUMLAH_SEN" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="pos">
+    <Key>
+      <PropertyRef Name="ID_POS" />
+    </Key>
+    <Property Name="ID_POS" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NAMA_POS" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="S_POS" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rule">
+    <Key>
+      <PropertyRef Name="ID_RULES" />
+    </Key>
+    <Property Name="ID_RULES" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NAMA_RULES" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="RULES_POS" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="S_RULES" Type="Int32" Nullable="false" />
+    <Property Name="SAP_RULES" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sp">
+    <Key>
+      <PropertyRef Name="SP1" />
+      <PropertyRef Name="USER_SP" />
+      <PropertyRef Name="SP_PRINT" />
+      <PropertyRef Name="SP_NOW" />
+    </Key>
+    <Property Name="SP1" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="USER_SP" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="SP_PRINT" Type="Int32" Nullable="false" />
+    <Property Name="SP_NOW" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="status">
+    <Key>
+      <PropertyRef Name="ID_STATUS" />
+    </Key>
+    <Property Name="ID_STATUS" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DESC_STATUS" Type="String" Nullable="false" MaxLength="111" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="t_terima">
+    <Key>
+      <PropertyRef Name="NO_TT" />
+      <PropertyRef Name="USER_TT" />
+      <PropertyRef Name="TT_PRINT" />
+      <PropertyRef Name="ARCHIVED" />
+      <PropertyRef Name="REJECTED" />
+      <PropertyRef Name="TT_NOW" />
+    </Key>
+    <Property Name="NO_TT" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="USER_TT" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="ID_POS" Type="Int32" />
+    <Property Name="TT_PRINT" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="ARCHIVED" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="REJECTED" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="TT_NOW" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="NPK" />
+    </Key>
+    <Property Name="NPK" Type="Int32" Nullable="false" />
+    <Property Name="nama" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="bagian" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="photo" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="PASS" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="LEVEL" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="ID_DEP" Type="Int32" Nullable="false" />
+    <Property Name="FLAG_USER" Type="Int32" Nullable="false" />
+    <Property Name="STATUS" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

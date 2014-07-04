@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="trackingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="trackingModelStoreContainer">
+    <EntitySet Name="currency" EntityType="trackingModel.Store.currency" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="data" EntityType="trackingModel.Store.data" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="departemen" EntityType="trackingModel.Store.departemen" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="detil" EntityType="trackingModel.Store.detil" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="pos" EntityType="trackingModel.Store.pos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="rules" EntityType="trackingModel.Store.rules" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sp" EntityType="trackingModel.Store.sp" store:Type="Tables" store:Schema="dbo" store:Name="sp">
+      <DefiningQuery>SELECT 
+      [sp].[SP] AS [SP], 
+      [sp].[USER_SP] AS [USER_SP], 
+      [sp].[SP_PRINT] AS [SP_PRINT], 
+      [sp].[SP_NOW] AS [SP_NOW]
+      FROM [dbo].[sp] AS [sp]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="status" EntityType="trackingModel.Store.status" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="t_terima" EntityType="trackingModel.Store.t_terima" store:Type="Tables" store:Schema="dbo" store:Name="t_terima">
+      <DefiningQuery>SELECT 
+      [t_terima].[NO_TT] AS [NO_TT], 
+      [t_terima].[USER_TT] AS [USER_TT], 
+      [t_terima].[ID_POS] AS [ID_POS], 
+      [t_terima].[TT_PRINT] AS [TT_PRINT], 
+      [t_terima].[ARCHIVED] AS [ARCHIVED], 
+      [t_terima].[REJECTED] AS [REJECTED], 
+      [t_terima].[TT_NOW] AS [TT_NOW]
+      FROM [dbo].[t_terima] AS [t_terima]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="user" EntityType="trackingModel.Store.user" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="currency">
+    <Key>
+      <PropertyRef Name="ID_CUR" />
+    </Key>
+    <Property Name="ID_CUR" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="N_CUR" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="K_CUR" Type="varchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="data">
+    <Key>
+      <PropertyRef Name="ID_BAR" />
+    </Key>
+    <Property Name="ID_BAR" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BP" Type="varchar" MaxLength="200" />
+    <Property Name="AMOUNT" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="SEN" Type="varchar" Nullable="false" MaxLength="11" />
+    <Property Name="ID_CUR" Type="int" Nullable="false" />
+    <Property Name="AMOUNT_SHOW" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="TERBILANG" Type="varchar(max)" />
+    <Property Name="SP" Type="varchar" MaxLength="200" />
+    <Property Name="ID_DEP" Type="int" Nullable="false" />
+    <Property Name="ID_RULES" Type="int" Nullable="false" />
+    <Property Name="TGL_INPUT" Type="datetime2" Nullable="false" />
+    <Property Name="TGL_STRUK" Type="datetime2" />
+    <Property Name="TGL_ARCHIVED" Type="datetime2" />
+    <Property Name="TGL_REJECTED" Type="datetime2" />
+    <Property Name="KEPADA" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="POS1" Type="varchar" MaxLength="200" />
+    <Property Name="POS2" Type="varchar" MaxLength="200" />
+    <Property Name="POS3" Type="varchar" MaxLength="200" />
+    <Property Name="POS4" Type="varchar" MaxLength="200" />
+    <Property Name="POS5" Type="varchar" MaxLength="200" />
+    <Property Name="POS6" Type="varchar" MaxLength="200" />
+    <Property Name="POS7" Type="varchar" MaxLength="200" />
+    <Property Name="POS8" Type="varchar" MaxLength="200" />
+    <Property Name="POS9" Type="varchar" MaxLength="200" />
+    <Property Name="POS10" Type="varchar" MaxLength="200" />
+    <Property Name="POS_ARCHIVE" Type="varchar" MaxLength="200" />
+    <Property Name="POS_REJECT" Type="varchar" MaxLength="200" />
+    <Property Name="NOW_POS" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="NEXT_POS" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="LAST_POS" Type="int" Nullable="false" />
+    <Property Name="FROM_POS" Type="varchar" MaxLength="200" />
+    <Property Name="KET" Type="varchar(max)" />
+    <Property Name="KET_BP" Type="varchar(max)" Nullable="false" />
+    <Property Name="BARCODE" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="USER" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="STATUS" Type="int" Nullable="false" />
+    <Property Name="BEBAN" Type="varchar" MaxLength="200" />
+    <Property Name="TGL_JT" Type="datetime2" />
+    <Property Name="TGL_SKRNG" Type="datetime2" />
+    <Property Name="PIMPINAN" Type="varchar" MaxLength="200" />
+    <Property Name="PEMOHON" Type="varchar" MaxLength="200" />
+    <Property Name="PRINT_TT" Type="int" />
+    <Property Name="STRUK_READY" Type="int" />
+    <Property Name="STATUS_VER" Type="int" />
+    <Property Name="MODIFIED_BY" Type="varchar" MaxLength="200" />
+    <Property Name="MODIFIED_ON" Type="datetime2" />
+    <Property Name="FILENAME" Type="varchar" MaxLength="200" />
+    <Property Name="UPDATE_COUNT" Type="int" />
+  </EntityType>
+  <EntityType Name="departemen">
+    <Key>
+      <PropertyRef Name="ID_DEP" />
+    </Key>
+    <Property Name="ID_DEP" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NAMA_DEP" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="FLAG_DEP" Type="int" Nullable="false" />
+    <Property Name="SAP_DEP" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="detil">
+    <Key>
+      <PropertyRef Name="ID_DETIL" />
+    </Key>
+    <Property Name="ID_DETIL" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BARCODE" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="PERKIRAAN" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="KETERANGAN" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="JUMLAH" Type="bigint" Nullable="false" />
+    <Property Name="JUMLAH_SEN" Type="varchar" Nullable="false" MaxLength="11" />
+  </EntityType>
+  <EntityType Name="pos">
+    <Key>
+      <PropertyRef Name="ID_POS" />
+    </Key>
+    <Property Name="ID_POS" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NAMA_POS" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="S_POS" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rules">
+    <Key>
+      <PropertyRef Name="ID_RULES" />
+    </Key>
+    <Property Name="ID_RULES" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NAMA_RULES" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="RULES_POS" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="S_RULES" Type="int" Nullable="false" />
+    <Property Name="SAP_RULES" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'tracking.dbo.sp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="sp">
+    <Key>
+      <PropertyRef Name="SP" />
+      <PropertyRef Name="USER_SP" />
+      <PropertyRef Name="SP_PRINT" />
+      <PropertyRef Name="SP_NOW" />
+    </Key>
+    <Property Name="SP" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="USER_SP" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="SP_PRINT" Type="int" Nullable="false" />
+    <Property Name="SP_NOW" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="status">
+    <Key>
+      <PropertyRef Name="ID_STATUS" />
+    </Key>
+    <Property Name="ID_STATUS" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DESC_STATUS" Type="varchar" Nullable="false" MaxLength="111" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'tracking.dbo.t_terima' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="t_terima">
+    <Key>
+      <PropertyRef Name="NO_TT" />
+      <PropertyRef Name="USER_TT" />
+      <PropertyRef Name="TT_PRINT" />
+      <PropertyRef Name="ARCHIVED" />
+      <PropertyRef Name="REJECTED" />
+      <PropertyRef Name="TT_NOW" />
+    </Key>
+    <Property Name="NO_TT" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="USER_TT" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="ID_POS" Type="int" />
+    <Property Name="TT_PRINT" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="ARCHIVED" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="REJECTED" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="TT_NOW" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="NPK" />
+    </Key>
+    <Property Name="NPK" Type="int" Nullable="false" />
+    <Property Name="nama" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="bagian" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="photo" Type="varchar" MaxLength="255" />
+    <Property Name="PASS" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="LEVEL" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="ID_DEP" Type="int" Nullable="false" />
+    <Property Name="FLAG_USER" Type="int" Nullable="false" />
+    <Property Name="STATUS" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+</Schema>
